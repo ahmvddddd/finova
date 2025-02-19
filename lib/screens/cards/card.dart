@@ -20,6 +20,7 @@ class CardScreen extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(Responsive.screenWidth * 0.02),
             child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(height: TSizes.spaceBtwItems,),
                 CreditCardFront(),

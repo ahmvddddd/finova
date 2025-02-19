@@ -6,6 +6,9 @@ class TImages {
   static const String darkAppLogo = "assets/logos/betalogo1.png";
   static const String lightAppLogo = "assets/logos/betalogo1.png";
   static const String avatar = "assets/profile_images/avatar_m1.png";
+  static const String avatarM2 = "assets/profile_images/avatar_m2.png";
+  static const String avatarF1 = "assets/profile_images/avatar_f1.png";
+  static const String avatarF2 = "assets/profile_images/avatar_f2.png";
 
   // logos
   static const String btc = "assets/logos/btc.png";

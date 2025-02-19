@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import '../../common/widgets/appbar/appbar.dart';
+import '../../common/widgets/custom_shapes/containers/button_container.dart';
+import '../../common/widgets/layouts/list_view.dart';
+import '../../common/widgets/texts/section_heading.dart';
+import '../../models/recent_transfer_model.dart';
 import '../../utils/constants/responsive.dart';
 import '../../utils/constants/sizes.dart';
+import 'widgets/bank_name.dart';
+import 'widgets/recent_transfers.dart';
 import 'widgets/transfer_box.dart';
 
 class MoneyTransfer extends StatefulWidget {
@@ -23,15 +29,55 @@ class _MoneyTransferState extends State<MoneyTransfer> {
           ),
           showBackArrow: false,
         ),
+        bottomNavigationBar: 
+                const ButtonContainer(
+                  text: 'Proceed',
+                  shadowColor: Colors.transparent
+                ),
         body: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.all(Responsive.screenWidth * 0.02),
-            child: const Column(
+            child: Column(
               children: [
-                SizedBox(
-                  height: TSizes.sm,
+
+                const SizedBox(
+                  height: TSizes.spaceBtwItems,
                 ),
-                TransferBox()
+                const TSectionHeading(
+                  title: 'Recent',
+                  showActionButton: false,
+                ),
+
+                const SizedBox(
+                  height: TSizes.spaceBtwItems,
+                ),
+                HomeListView(
+                    sizedBoxHeight: Responsive.screenHeight * 0.16,
+                    scrollDirection: Axis.horizontal,
+                    seperatorBuilder: (context, index) =>
+                         SizedBox(width: Responsive.screenWidth * 0.02),
+                    itemCount: recentTransferList.length,
+                    itemBuilder: (context, index) {
+                      return RecentTransfers(
+                        avatar: recentTransferList[index]["avatar"],
+                        name: recentTransferList[index]["name"]
+                      );
+                    },
+                    ),
+
+                const SizedBox(
+                  height: TSizes.spaceBtwSections,
+                ),
+                const BankName(),
+
+                const SizedBox(
+                  height: TSizes.spaceBtwSections,
+                ),
+                const TransferBox(),
+
+                const SizedBox(
+                  height: TSizes.spaceBtwItems,
+                ),
               ],
             ),
           ),
