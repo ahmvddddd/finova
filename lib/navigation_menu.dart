@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'screens/cards/card.dart';
+import 'screens/cards/credit_card.dart';
 import 'screens/home/home_screen.dart';
 import 'screens/transfer/money_transfer.dart';
 import 'utils/constants/colors.dart';
@@ -71,6 +72,6 @@ class NavigationController extends GetxController {
     const HomeScreen(),
     const MoneyTransfer(),
     const MoneyTransfer(),
-    const CardScreen()
+    const CreditCardPage()
   ];
 }

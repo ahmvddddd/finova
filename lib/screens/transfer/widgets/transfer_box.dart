@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:number2words/number2words.dart';
 import 'package:intl/intl.dart';
 
+import '../../../common/widgets/custom_shapes/containers/rounded_container.dart';
+import '../../../utils/constants/sizes.dart';
+
 class TransferBox extends StatefulWidget {
   const TransferBox({super.key});
 
@@ -51,20 +54,35 @@ class _AmountToWordsPageState extends State<TransferBox> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          TextField(
-            controller: _controller,
-            keyboardType: const TextInputType.numberWithOptions(decimal: true),
-            decoration:  InputDecoration(
-              hintText: 'Enter Amount',
-              hintStyle: Theme.of(context).textTheme.labelSmall,
-              border: const OutlineInputBorder(),
+          TRoundedContainer(
+          showBorder: true,
+          backgroundColor: Colors.transparent,
+          padding: const EdgeInsets.all(TSizes.xs),
+            child: TextField(
+              controller: _controller,
+              keyboardType: const TextInputType.numberWithOptions(decimal: true),
+              decoration:  InputDecoration(
+                hintText: 'Enter Amount',
+                hintStyle: Theme.of(context).textTheme.labelSmall,
+                    focusedBorder: InputBorder.none,
+                    enabledBorder: InputBorder.none,
+                    errorBorder: InputBorder.none,
+                    disabledBorder: InputBorder.none,
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(15),
+                      borderSide: const BorderSide(
+                        width: 0,
+                        style: BorderStyle.none,
+                      ),
+              ),
             ),
-            onChanged: _convertAmountToWords,
+              onChanged: _convertAmountToWords,
           ),
-          const SizedBox(height: 20),
+          ),
+          const SizedBox(height: TSizes.sm),
           Text(
             _amountInWords,
-            style: Theme.of(context).textTheme.labelSmall,
+            style: Theme.of(context).textTheme.labelSmall!.copyWith(fontSize: 10),
           ),
         ],
       );
