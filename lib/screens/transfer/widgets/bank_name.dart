@@ -88,6 +88,7 @@ class BankNameState extends State<BankName> {
         TRoundedContainer(
           showBorder: true,
           backgroundColor: Colors.transparent,
+          borderColor: dark ? Colors.white.withOpacity(0.1) : Colors.black.withOpacity(0.1),
           padding: const EdgeInsets.all(TSizes.xs),
           child: Row(
             children: [

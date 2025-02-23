@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../utils/constants/colors.dart';
+import '../../../utils/constants/sizes.dart';
 
 class TSettingsMenuTile extends StatelessWidget {
   const TSettingsMenuTile({
@@ -21,9 +22,9 @@ class TSettingsMenuTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Icon(icon, size: 28, color: TColors.primary),
+      leading: Icon(icon, size: TSizes.iconSm, color: TColors.primary),
       title: Text(title, style:  Theme.of(context).textTheme.labelMedium,),
-      subtitle: Text(subTitle, style: Theme.of(context).textTheme.labelMedium),
+      subtitle: Text(subTitle, style: Theme.of(context).textTheme.labelSmall!.copyWith(color: TColors.darkerGrey)),
       trailing: trailing,
       onTap: onTap,
     );

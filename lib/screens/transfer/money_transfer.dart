@@ -36,7 +36,7 @@ class _MoneyTransferState extends State<MoneyTransfer> {
                 ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.all(Responsive.screenWidth * 0.02),
+            padding: EdgeInsets.all(Responsive.padding),
             child: Column(
               children: [
 

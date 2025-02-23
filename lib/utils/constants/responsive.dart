@@ -18,6 +18,7 @@ class Responsive {
 
    //height
    static double screenHeight = MediaQuery.of(Get.context!).size.height;
+   static double padding = MediaQuery.of(Get.context!).size.height * 0.02;
    static double horizontalCardHeight = MediaQuery.of(Get.context!).size.height * 0.20;
    static double mdCardHeight = MediaQuery.of(Get.context!).size.height * 0.23;
    static double verticalCardHeight = MediaQuery.of(Get.context!).size.height * 0.25;

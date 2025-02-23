@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 
 import '../../../common/widgets/custom_shapes/containers/rounded_container.dart';
 import '../../../utils/constants/sizes.dart';
+import '../../../utils/helpers/helper_function.dart';
 
 class TransferBox extends StatefulWidget {
   const TransferBox({super.key});
@@ -51,11 +52,13 @@ class _AmountToWordsPageState extends State<TransferBox> {
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TRoundedContainer(
           showBorder: true,
+          borderColor: dark ? Colors.white.withOpacity(0.1) : Colors.black.withOpacity(0.1),
           backgroundColor: Colors.transparent,
           padding: const EdgeInsets.all(TSizes.xs),
             child: TextField(
