@@ -36,7 +36,18 @@ class CreditCardFront extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: TSizes.spaceBtwSections,),
+              const SizedBox(height: TSizes.sm),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+            '\$7,000.00',
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(color: Colors.white),
+          ),
+                ]
+              ),
+
+              const SizedBox(height: TSizes.sm,),
               Text('**** **** **** 1234',
                   style: Theme.of(context).textTheme.headlineMedium!.copyWith(color: Colors.white)),
               const SizedBox(height: TSizes.spaceBtwSections),

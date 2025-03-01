@@ -6,6 +6,7 @@ import '../../common/widgets/texts/section_heading.dart';
 import '../../models/recent_transfer_model.dart';
 import '../../utils/constants/responsive.dart';
 import '../../utils/constants/sizes.dart';
+import 'widgets/account_number.dart';
 import 'widgets/bank_name.dart';
 import 'widgets/recent_transfers.dart';
 import 'widgets/transfer_box.dart';
@@ -71,13 +72,16 @@ class _MoneyTransferState extends State<MoneyTransfer> {
                 const BankName(),
 
                 const SizedBox(
+                  height: TSizes.spaceBtwItems,
+                ),
+                const AccountNumber(),
+
+                const SizedBox(
                   height: TSizes.spaceBtwSections,
                 ),
                 const TransferBox(),
 
-                const SizedBox(
-                  height: TSizes.spaceBtwItems,
-                ),
+                
               ],
             ),
           ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../common/widgets/appbar/appbar.dart';
+import '../../common/widgets/layouts/list_view.dart';
 import '../../common/widgets/list_tile/settings_menu_tile.dart';
+import '../../models/account_details_model.dart';
 import '../../utils/constants/responsive.dart';
 import '../../utils/constants/sizes.dart';
 import 'widgets/account_avatar.dart';
@@ -34,11 +36,22 @@ class AccountScreen extends StatelessWidget {
                   const AccountInfo(),
 
                   const SizedBox(height: TSizes.spaceBtwItems,),
-                  const TSettingsMenuTile(
-                    icon: Iconsax.user,
-                    title: 'Beneficiaries',
-                    subTitle: 'Update your beneficiary list',
-                  )
+                  HomeListView(
+                      scrollDirection: Axis.vertical,
+                      scrollPhysics: const NeverScrollableScrollPhysics(),
+                      seperatorBuilder: (context, index) =>
+                          const SizedBox(height: TSizes.sm),
+                      itemCount: accountDetailsList.length,
+                      itemBuilder: (context, index) {
+                        return TSettingsMenuTile(
+                    icon: accountDetailsList[index]["icon"],
+                    title: accountDetailsList[index]["title"],
+                    subTitle: accountDetailsList[index]["subtitle"],
+                    trailing: const Icon(Iconsax.arrow_right),
+                  );
+                      },
+                    ),
+
               ],
             ),
           ),

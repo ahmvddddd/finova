@@ -27,7 +27,7 @@ class CreditCardBack extends StatelessWidget {
                 alignment: Alignment.topCenter,
                 child: TRoundedContainer(
                   padding: const EdgeInsets.all(TSizes.xs),
-                  backgroundColor: Colors.black.withOpacity(0.5),
+                  backgroundColor: Colors.black.withOpacity(0.8),
                   width: Responsive.screenWidth * 0.70,
                   height: Responsive.screenHeight * 0.03,
                 ),
@@ -39,31 +39,58 @@ class CreditCardBack extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Authorized Signature',
-                style: Theme.of(context).textTheme.labelMedium!.copyWith(color: Colors.white, fontSize: 10),),
+                style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.black, fontSize: 8),),
                 Text('Not Valid Unless Signed',
-                style: Theme.of(context).textTheme.labelMedium!.copyWith(color: Colors.white, fontSize: 10),)
+                style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.black, fontSize: 8),)
               ],
             ),
             
             const SizedBox(height: TSizes.spaceBtwItems,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  height: TSizes.md,
+                  width: Responsive.screenWidth * 0.30,
+                  color: Colors.red[900],
+                ),
+                Container(
+                  height: TSizes.md,
+                  width: Responsive.screenWidth * 0.25,
+                  color: Colors.orange[700],
+                ),
+                Container(
+                    height: TSizes.md,
+                    width: Responsive.screenWidth * 0.18,
+                    color: Colors.blue[900]),
+                Container(
+                  height: TSizes.md,
+                  width: Responsive.screenWidth * 0.13,
+                  color: Colors.green[900],
+                )
+              ],
+            ),
+
+            const SizedBox(height: TSizes.spaceBtwItems),
             TRoundedContainer(
                   padding: const EdgeInsets.all(TSizes.xs),
                   backgroundColor: Colors.black.withOpacity(0.1),
-                  child: Text('CVV 123',
+                  child: Text('CVV  123',
                     style: Theme.of(context).textTheme.labelMedium!.copyWith(color: Colors.white)),
                 ),
             SizedBox(
               width: Responsive.screenWidth * 0.70,
-              child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nunc tempus, semper nibh nec, lacinia nunc. Vestibulum sollicitudin fringilla sapien et vulputate. Phasellus maximus magna at massa elementum, vel eleifend enim sollicitudin. Pellentesque sit amet ornare tortor, ut dapibus nisi. Aliquam leo felis, scelerisque nec posuere non, iaculis a nisi. Duis quis orci in ipsum facilisis ultricies et sit amet neque. Sed sit amet dictum arcu. Nulla non fermentum sapien. Pellentesque at erat a eros mollis venenatis ac at velit. Donec lacinia bibendum mauris vitae interdum.',
-              style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.white, fontSize: 10),
+              child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nunc tempus, semper nibh nec, lacinia nunc. Vestibulum sollicitudin fringilla sapien et vulputate. Phasellus maximus magna at massa elementum, vel eleifend enim sollicitudin. Pellentesque sit amet ornare tortor, ut dapibus nisi.',
+              style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.black, fontSize: 10),
               softWrap: true,
-              maxLines: 4,)),
-            const Spacer(),
-             Padding(
-              padding: const EdgeInsets.only(bottom: 20),
-              child: Text('FINOVA 2025',
-                  style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.white)),
-            ),
+              maxLines: 2,)),
+            // const Spacer(),
+              // padding: const EdgeInsets.only(bottom: 20),
+            
+
+            const SizedBox(height: TSizes.sm),
+             Text('FINOVA 2025',
+                 style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.white)),
           ],
         ),
       );

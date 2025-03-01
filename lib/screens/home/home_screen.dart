@@ -88,6 +88,7 @@ class HomeScreen extends StatelessWidget {
                     radius: TSizes.cardRadiusSm,
                     child: HomeListView(
                       scrollDirection: Axis.vertical,
+                      scrollPhysics: const NeverScrollableScrollPhysics(),
                       seperatorBuilder: (context, index) =>
                           const SizedBox(height: TSizes.sm),
                       itemCount: transactionHistoryList.length,
