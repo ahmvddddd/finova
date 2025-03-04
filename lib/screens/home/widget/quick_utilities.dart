@@ -27,7 +27,7 @@ class _QuickUtilitiesState extends State<QuickUtilities> {
                 width: Responsive.screenWidth * 0.20,
                 height: Responsive.screenHeight * 0.10,
                 padding: const EdgeInsets.all(TSizes.xs),
-                backgroundColor: TColors.primary.withOpacity(0.2),
+                backgroundColor: TColors.primary.withOpacity(0.3),
                 borderColor: TColors.primary,
                 radius: TSizes.cardRadiusSm,
                 child: Column(

@@ -15,9 +15,9 @@ class TColors {
     begin: Alignment(0.0, 0.0),
     end: Alignment(0.707, -0.707),
     colors: [
-        Color(0xFF0b2ca9),
-        Color(0xFF0a1d79),
-        Color(0xFF090c44),
+        Color.fromARGB(255, 4, 67, 48),
+        Color.fromARGB(255, 12, 140, 91),
+        Color.fromARGB(255, 27, 234, 144),
       ],
   );
 

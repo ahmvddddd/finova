@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../../common/widgets/appbar/appbar.dart';
 import '../../common/widgets/custom_shapes/containers/button_container.dart';
 import '../../common/widgets/layouts/list_view.dart';
@@ -6,6 +7,7 @@ import '../../common/widgets/texts/section_heading.dart';
 import '../../models/recent_transfer_model.dart';
 import '../../utils/constants/responsive.dart';
 import '../../utils/constants/sizes.dart';
+import 'payment.dart';
 import 'widgets/account_number.dart';
 import 'widgets/bank_name.dart';
 import 'widgets/recent_transfers.dart';
@@ -31,7 +33,10 @@ class _MoneyTransferState extends State<MoneyTransfer> {
           showBackArrow: false,
         ),
         bottomNavigationBar: 
-                const ButtonContainer(
+                 ButtonContainer(
+                  onPressed: () {
+                    Get.to(() => const PaymentScreen());
+                  },
                   text: 'Proceed',
                   shadowColor: Colors.transparent
                 ),
@@ -50,7 +55,7 @@ class _MoneyTransferState extends State<MoneyTransfer> {
                 ),
 
                 const SizedBox(
-                  height: TSizes.spaceBtwItems,
+                  height: TSizes.sm,
                 ),
                 HomeListView(
                     sizedBoxHeight: Responsive.screenHeight * 0.16,

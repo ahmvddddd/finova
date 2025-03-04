@@ -39,9 +39,9 @@ class CreditCardBack extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Authorized Signature',
-                style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.black, fontSize: 8),),
+                style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.white, fontSize: 8),),
                 Text('Not Valid Unless Signed',
-                style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.black, fontSize: 8),)
+                style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.white, fontSize: 8),)
               ],
             ),
             
@@ -61,11 +61,11 @@ class CreditCardBack extends StatelessWidget {
                 ),
                 Container(
                     height: TSizes.md,
-                    width: Responsive.screenWidth * 0.18,
+                    width: Responsive.screenWidth * 0.15,
                     color: Colors.blue[900]),
                 Container(
                   height: TSizes.md,
-                  width: Responsive.screenWidth * 0.13,
+                  width: Responsive.screenWidth * 0.10,
                   color: Colors.green[900],
                 )
               ],
@@ -74,14 +74,14 @@ class CreditCardBack extends StatelessWidget {
             const SizedBox(height: TSizes.spaceBtwItems),
             TRoundedContainer(
                   padding: const EdgeInsets.all(TSizes.xs),
-                  backgroundColor: Colors.black.withOpacity(0.1),
+                  backgroundColor: Colors.black.withOpacity(0.5),
                   child: Text('CVV  123',
                     style: Theme.of(context).textTheme.labelMedium!.copyWith(color: Colors.white)),
                 ),
             SizedBox(
               width: Responsive.screenWidth * 0.70,
               child: Text('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at nunc tempus, semper nibh nec, lacinia nunc. Vestibulum sollicitudin fringilla sapien et vulputate. Phasellus maximus magna at massa elementum, vel eleifend enim sollicitudin. Pellentesque sit amet ornare tortor, ut dapibus nisi.',
-              style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.black, fontSize: 10),
+              style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.white, fontSize: 10),
               softWrap: true,
               maxLines: 2,)),
             // const Spacer(),
@@ -90,7 +90,7 @@ class CreditCardBack extends StatelessWidget {
 
             const SizedBox(height: TSizes.sm),
              Text('FINOVA 2025',
-                 style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.white)),
+                 style: Theme.of(context).textTheme.labelSmall!.copyWith(color: Colors.grey)),
           ],
         ),
       );

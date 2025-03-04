@@ -17,6 +17,7 @@ class TransferBox extends StatefulWidget {
 
 class _AmountToWordsPageState extends State<TransferBox> {
   String _amountInWords = '';
+  bool _isInsufficientBalance = false;
   final TextEditingController _controller = TextEditingController();
   final NumberFormat _formatter = NumberFormat('#,##0.##');
 
@@ -24,6 +25,7 @@ class _AmountToWordsPageState extends State<TransferBox> {
     if (value.isEmpty) {
       setState(() {
         _amountInWords = '';
+        _isInsufficientBalance = false;
       });
       return;
     }
@@ -33,6 +35,16 @@ class _AmountToWordsPageState extends State<TransferBox> {
     if (amount == null) {
       setState(() {
         _amountInWords = 'Invalid number';
+        _isInsufficientBalance = false;
+      });
+      return;
+    }
+
+    // Check if amount exceeds 100 million
+    if (amount > 100000000) {
+      setState(() {
+        _amountInWords = 'Insufficient balance';
+        _isInsufficientBalance = true;
       });
       return;
     }
@@ -44,9 +56,13 @@ class _AmountToWordsPageState extends State<TransferBox> {
       selection: TextSelection.collapsed(offset: formattedValue.length),
     );
 
-    // Convert the amount to words
+    // Replace Dollars with Naira
     setState(() {
-      _amountInWords = '${Number2Words.convert(amount)} ';
+      _amountInWords = Number2Words.convert(amount)
+          .replaceAll("Dollar", "Naira")
+          .replaceAll("Dollars", "Naira")
+          .replaceAll("Nairas", "Naira");
+      _isInsufficientBalance = false;
     });
   }
 
@@ -55,39 +71,41 @@ class _AmountToWordsPageState extends State<TransferBox> {
     final dark = THelperFunctions.isDarkMode(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TRoundedContainer(
+      children: [
+        TRoundedContainer(
           showBorder: true,
           borderColor: dark ? Colors.white.withOpacity(0.1) : Colors.black.withOpacity(0.1),
           backgroundColor: Colors.transparent,
           padding: const EdgeInsets.all(TSizes.xs),
-            child: TextField(
-              controller: _controller,
-              keyboardType: const TextInputType.numberWithOptions(decimal: true),
-              decoration:  InputDecoration(
-                hintText: 'Enter Amount',
-                hintStyle: Theme.of(context).textTheme.labelSmall,
-                    focusedBorder: InputBorder.none,
-                    enabledBorder: InputBorder.none,
-                    errorBorder: InputBorder.none,
-                    disabledBorder: InputBorder.none,
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(
-                        width: 0,
-                        style: BorderStyle.none,
-                      ),
+          child: TextField(
+            controller: _controller,
+            keyboardType: const TextInputType.numberWithOptions(decimal: true),
+            decoration: InputDecoration(
+              hintText: 'Enter Amount',
+              hintStyle: Theme.of(context).textTheme.labelSmall,
+              focusedBorder: InputBorder.none,
+              enabledBorder: InputBorder.none,
+              errorBorder: InputBorder.none,
+              disabledBorder: InputBorder.none,
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: const BorderSide(
+                  width: 0,
+                  style: BorderStyle.none,
+                ),
               ),
             ),
-              onChanged: _convertAmountToWords,
+            onChanged: _convertAmountToWords,
           ),
+        ),
+        const SizedBox(height: TSizes.sm),
+        Text(
+          _amountInWords,
+          style: Theme.of(context).textTheme.labelLarge?.copyWith(
+            color: _isInsufficientBalance ? Colors.red : null,
           ),
-          const SizedBox(height: TSizes.sm),
-          Text(
-            _amountInWords,
-            style: Theme.of(context).textTheme.labelSmall!.copyWith(fontSize: 10),
-          ),
-        ],
-      );
+        ),
+      ],
+    );
   }
 }

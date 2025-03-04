@@ -39,7 +39,7 @@ class CreditCardPage extends StatelessWidget {
                 const SizedBox(height: TSizes.spaceBtwSections),
                 const CreditCardButtons(),
 
-                const SizedBox(height: TSizes.spaceBtwItems),
+                const SizedBox(height: TSizes.spaceBtwSections),
                 const TSectionHeading(
                   title: 'Card Transaction History',
                 ),

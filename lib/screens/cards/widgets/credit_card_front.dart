@@ -41,8 +41,8 @@ class CreditCardFront extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-            '\$7,000.00',
-            style: Theme.of(context).textTheme.bodySmall!.copyWith(color: Colors.white),
+            '\u20A67,000.00',
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(color: Colors.white, fontFamily: 'JosefinSans'),
           ),
                 ]
               ),

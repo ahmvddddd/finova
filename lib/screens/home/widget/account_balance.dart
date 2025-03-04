@@ -12,7 +12,7 @@ class AccountBalance extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return TRoundedContainer(
-      width: Responsive.screenWidth * 0.90,
+      width: Responsive.screenWidth * 0.88,
       backgroundColor:
           dark ? Colors.white.withOpacity(0.1) : Colors.black.withOpacity(0.1),
       radius: TSizes.cardRadiusSm,
@@ -28,8 +28,8 @@ class AccountBalance extends StatelessWidget {
             height: TSizes.xs,
           ),
           Text(
-            '\$12,596.00',
-            style: Theme.of(context).textTheme.headlineSmall,
+            '\u20A6612,596.00',
+            style: Theme.of(context).textTheme.headlineSmall!.copyWith(fontFamily: 'JosefinSans'),
           ),
           const SizedBox(
             height: TSizes.spaceBtwItems,
@@ -43,7 +43,7 @@ class AccountBalance extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(2),
                 decoration: BoxDecoration(
-                    color: TColors.darkerGrey,
+                    color: dark ? TColors.darkerGrey : TColors.darkGrey.withOpacity(0.5),
                     borderRadius: BorderRadius.circular(TSizes.cardRadiusXs)),
                 child: Text(
                   'Savings',

@@ -24,11 +24,11 @@ class CreditCardButtons extends StatelessWidget {
               icon: Icon(creditCardList[index]["icon"],
               color: Colors.white,),
             ),
-            const SizedBox(height: TSizes.sm),
+            const SizedBox(height: TSizes.sm + 4),
             SizedBox(
               width: Responsive.screenWidth * 0.30,
               child: Text(creditCardList[index]["text"],
-              style: Theme.of(context).textTheme.labelSmall!.copyWith(fontSize: 10),
+              style: Theme.of(context).textTheme.labelSmall!.copyWith(fontSize: 8),
               textAlign: TextAlign.center,
               softWrap: true,),
             )

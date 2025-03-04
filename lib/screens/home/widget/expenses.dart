@@ -36,8 +36,8 @@ class Expenses extends StatelessWidget {
               height: TSizes.xs,
             ),
             Text(
-              '\$8,256.09',
-              style: Theme.of(context).textTheme.labelMedium,
+              '\u20A68,256.09',
+              style: Theme.of(context).textTheme.labelMedium!.copyWith(fontFamily: 'JosefinSans'),
             ),
             const SizedBox(
               height: TSizes.sm,

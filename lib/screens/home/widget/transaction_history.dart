@@ -61,7 +61,8 @@ class TransactionHistory extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .labelMedium!
-                    .copyWith(color: color),
+                    .copyWith(color: color,
+                    fontFamily: 'JosefinSans'),
               )
             ],
           )

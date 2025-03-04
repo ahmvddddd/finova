@@ -44,7 +44,7 @@ class AccountInfo extends StatelessWidget {
                               children: [
                                 const SizedBox(width: TSizes.xs,),
                                 TextButton(onPressed: () {}, 
-                                style: TextButton.styleFrom(backgroundColor: TColors.darkerGrey.withOpacity(0.5)),
+                                style: TextButton.styleFrom(backgroundColor: dark ? TColors.darkerGrey.withOpacity(0.5): TColors.darkGrey.withOpacity(0.5)),
                                 child: Text('upgrade',
                                 style: Theme.of(context).textTheme.labelSmall,))
                               ],

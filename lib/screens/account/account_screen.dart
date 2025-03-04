@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 import '../../common/widgets/appbar/appbar.dart';
 import '../../common/widgets/layouts/list_view.dart';
 import '../../common/widgets/list_tile/settings_menu_tile.dart';
@@ -47,7 +46,7 @@ class AccountScreen extends StatelessWidget {
                     icon: accountDetailsList[index]["icon"],
                     title: accountDetailsList[index]["title"],
                     subTitle: accountDetailsList[index]["subtitle"],
-                    trailing: const Icon(Iconsax.arrow_right),
+                    trailing: const Icon(Icons.arrow_right),
                   );
                       },
                     ),
