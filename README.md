@@ -6,11 +6,59 @@ A new Flutter project.
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Prerequisites
+Before you begin, ensure you have the following installed:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Flutter SDK
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Dart SDK
+
+Android Studio or VS Code (with Flutter and Dart plugins)
+
+A connected device or emulator for testing
+
+Getting Started
+1. Clone the repository
+```
+   git clone https://github.com/ahmvddddd/finova.git
+```
+Navigate to the project directory:
+```
+cd finova
+```
+2. Install dependencies
+Run the following command to fetch all the packages:
+```
+flutter pub get
+```
+
+3. Run the app
+Make sure a device or emulator is running, then execute:
+```
+flutter run
+```
+
+4. Build APK (Android)
+To build a release APK:
+```
+flutter build apl
+```
+Build for iOS (MacOS only)
+To build the app for iOS:
+```
+flutter build ios
+```
+
+5. Troubleshooting
+Run flutter doctor to check for setup issues:
+```
+flutter doctor
+
+```
+To clean the build:
+```
+flutter clean
+flutter pub get
+```
+
+Feel free to customize the UI and make upgrades. Also you can hit me up if you have an issue or recommendation
